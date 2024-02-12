@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <style>
+        li{
+            color: green;
+        }
+        #fruits-title{
+            color: black;
+        }
+        .important-places{
+            color: rgb(230, 64, 14);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Dom</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente ad architecto maiores sunt nobis, exercitationem saepe ducimus veniam deserunt nulla.</p>
+    </header>
+    <main>
+        <section>
+            <h1 id="yoyo">My Awesome DOM de baba</h1>
+        <ul>
+            <li>JAlali Set</li>
+            <li>Shafayat</li>
+            <li>Bonobas</li>
+            <li>Dom de re baba</li>
+        </ul>
+        </section>
+
+        <section class="fruits-container">
+            <h1 id="fruits-title" class="dog bidal">Fruits I like</h1>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Mango</li>
+            </ul>
+        </section>
+
+        <section id="places-container" class="placeContainer">
+            <h1 id="places-title">Places I like</h1>
+            <ul>
+                <li class="important-places">bandarban</li>
+                <li class="important-places">Kataban</li>
+                <li class="important-places">Sundarban</li>
+                <li>Shalban</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="./js/dom.js"></script>
+    <script src="./js/styleINJS.js"></script>
+    <script>
+        // const student = {
+        //     name : 'Abul',
+        //     ID : 11,
+        //     study: function(time){
+        //         console.log(time,' ghonta poro');
+        //     }
+        // }
+        // Array like object or html collection...
+
+        // option 1...
+        const liCollection = document.getElementsByTagName('li');
+        // console.log(liCollection);
+        // HTMLCollection(4) [li, li, li, li]
+        for(const li of liCollection){
+            // console.log(li);
+            console.log(li.innerText);
+        }
+
+        const allHeadings = document.getElementsByTagName('h1');
+        for(const h1 of allHeadings){
+            console.log(h1);
+        }
+
+        // option 2...
+        const fruitsTitle = document.getElementById('fruits-title');
+        fruitsTitle.innerText = 'Fruits changes by JAVASCRIPT'
+
+        // option 3...
+        const places = document.getElementsByClassName('important-places');
+        for(const place of places){
+            console.log(place.innerText);
+        }
+
+        // option 4...
+        const someLI = document.querySelectorAll('.fruits-container li');
+        // console.log(someLI);
+        // NodeList(3) [li, li, li]
+        for(const li of someLI){
+            // console.log(li);
+            console.log(li.innerText);
+        }
+
+        // option 5...
+        // will return the first one...
+        const singleLI = document.querySelector('.fruits-container li');
+        console.log(singleLI.innerText);
+        //Apple
+
+        const title = document.getElementById('fruits-title');
+        // title.getAttribute('id');
+        // fruits-title
+        console.log(title.getAttribute('id'))
+        // title.getAttribute('class');
+        console.log(title.getAttribute('class'))
+        // dog bidal
+        console.log(title.classList);
+        title.classList.add('meow');
+        title.classList.remove('bidal');
+        console.log(title.classList);
+        title.setAttribute('title','toltip set by Javascript');
+
+
+        // document.getElementsByClassName('fruits-container')[1].innerHTML
+
+
+        console.log('Adding js Inside html file')
+    </script>
+</body>
+</html>
