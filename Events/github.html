@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">My Secret Info</h1>
+    <input type="text" id="dltConfirm">
+    <button id="dlt" disabled>delete</button>
+
+    <script>
+        document.getElementById('dlt').addEventListener('click',function(){
+            const h = document.getElementById('heading');
+            h.style.display = 'none';
+        })
+        document.getElementById('dltConfirm').addEventListener('keyup',function(event){
+            const text = event.target.value;
+            const dltbtn = document.getElementById('dlt');
+
+            if(text === 'delete'){
+                dltbtn.removeAttribute('disabled');
+             }
+            else{
+                dltbtn.setAttribute('disabled',true);
+            }
+        })
+    </script>
+</body>
+</html>

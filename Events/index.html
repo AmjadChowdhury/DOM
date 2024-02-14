@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <h1>Hello from html</h1>
+    <button onclick="console.log('7')">Click me</button>
+    <button onclick="console.log('Hello')">Hire Me</button>
+    <br>
+    <button onclick="document.body.style.backgroundColor = 'Yellow'">Make Yellow</button>
+    <button onclick="makeRed()">Make Red</button>
+    <button id="makeBlue">Make Blue</button>
+    <button id="makePurple">Make Purple</button>
+    <button id="pink">Make Pink</button>
+    <button id="green">Make green</button>
+    <button id="golden">Make Golden rod</button>
+
+    <!-- <script src="./js/first.js"></script> -->
+
+    <script>
+        // 2.[important]
+        function makeRed(){
+            document.body.style.backgroundColor = 'red';
+        }
+
+
+        // 3..
+        const blue = document.getElementById('makeBlue');
+        blue.onclick = makeBlue;
+        // function call kora jabe na,,korle value set hoye jabe..
+
+        function makeBlue(){
+            document.body.style.backgroundColor = 'blue';
+        }
+
+        // 3.. another
+        const purpleColor = document.getElementById('makePurple');
+        purpleColor.onclick = function makePurple(){
+            document.body.style.backgroundColor = 'purple'
+        }
+
+        // 4. addEventListener
+        const pinkColor = document.getElementById('pink');
+        pinkColor.addEventListener('click',makePink);
+
+        function makePink(){
+            document.body.style.backgroundColor = 'pink';
+        }
+
+        // 4. another
+        const greenColor = document.getElementById('green');
+        // greenColor.addEventListener('click',function(){})
+        greenColor.addEventListener('click',function(){
+            document.body.style.backgroundColor = 'green';
+        })
+
+        // 4. another...[Very very Important..]
+
+        // document.getElementById('golden').addEventListener('click',function(){})
+        document.getElementById('golden').addEventListener('click',function(){
+            document.body.style.backgroundColor = 'goldenrod';
+        })
+
+    </script>
+</body>
+</html>

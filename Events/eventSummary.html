@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event summary</title>
+</head>
+<body>
+    <!-- 1... -->
+    <h1>Hello <span id="createName">Amjad</span> welcome to web Development journey.</h1>
+    <input type="text" name="" id="nameDao">
+    <button onclick="clickMaro()">Click</button>
+    <!--  2.. -->
+    <h3 id="name">Kismot ali</h3>
+    <input type="text"  id="inputField">
+    <button id="update">Update Name</button>
+
+
+
+    <script>
+        //1..
+
+        function clickMaro(){
+            const a = document.getElementById('nameDao');
+            const b = document.getElementById('createName');
+            b.innerText = a.value;
+            a.value = '';
+        }
+
+        //2...
+        document.getElementById('update').addEventListener('click',function(){
+            const inputText = document.getElementById('inputField');
+            const p = inputText.value;
+            // input btn inner text nai,value ase..
+            const nameField = document.getElementById('name');
+            nameField.innerText = p;
+
+            inputText.value = '';
+            // click korar por input field null kora..
+        })
+    </script>
+</body>
+</html>

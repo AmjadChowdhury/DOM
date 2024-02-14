@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegant</title>
+</head>
+<body>
+    <h1>Delegant list</h1>
+    <ul id="listContainer">
+        <li class="item">Lorem ipsum dolor sit amet.</li>
+        <li class="item">Obcaecati saepe quisquam necessitatibus numquam!</li>
+        <li class="item">Recusandae sequi quam molestiae tempore!</li>
+        <li class="item">Incidunt veniam expedita fuga porro!</li>
+        <li class="item">Reiciendis modi sed inventore molestiae.</li>
+        <li class="item">Et nihil voluptatem quis dolorum?</li>
+    </ul>
+    <textarea name="" id="textLi" cols="60" rows="7"></textarea><br>
+    <button id="add">Add list</button>
+
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // for(const item of items){
+        //     // console.log(item);
+        //     item.addEventListener('click',function(event){
+        //         // console.log(event.target)
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        document.getElementById('listContainer').addEventListener('click',function(event){
+            // console.log(event.target)
+            event.target.parentNode.removeChild(event.target);
+        })
+
+        document.getElementById('add').addEventListener('click',function(){
+            const parent = document.getElementById('listContainer');
+
+            const text = document.getElementById('textLi');
+
+            const child = document.createElement('li');
+            child.innerText = text.value;
+            parent.appendChild(child);
+
+            text.value = '';
+            child.classList.add('item');
+        })
+    </script>
+</body>
+</html>

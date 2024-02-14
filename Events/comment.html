@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Comment Box</h1>
+    <div id="commentSection">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, vitae?</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, laudantium?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, sint!</p>
+    </div>
+    <textarea name="" id="cmnt" cols="60" rows="5"></textarea><br>
+    <button id="btn">Post</button>
+
+
+    <script>
+        document.getElementById('btn').addEventListener('click',function(){
+            const text = document.getElementById('cmnt');
+
+            // child create kora..
+            const newP = document.createElement('p');
+            newP.innerText = text.value;
+
+            // parent ke dore child dukano..
+            const parentElement = document.getElementById('commentSection');
+            parentElement.appendChild(newP);
+
+            // clear the text area..
+            text.value = '';
+        })
+    </script>
+</body>
+</html>
